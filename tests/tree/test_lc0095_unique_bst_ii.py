@@ -25,18 +25,18 @@ class TestLc0095UniqueBstII:
         self.sol = Solution()
 
     def test_n3(self):
-        trees = self.sol.generateTrees(3)
+        trees = self.sol.generate_trees(3)
         assert len(trees) == 5
 
     def test_n1(self):
-        trees = self.sol.generateTrees(1)
+        trees = self.sol.generate_trees(1)
         assert len(trees) == 1
         assert trees[0].val == 1
 
     def test_n0(self):
-        trees = self.sol.generateTrees(0)
+        trees = self.sol.generate_trees(0)
         assert trees == []
 
     def test_n2(self):
-        trees = self.sol.generateTrees(2)
+        trees = self.sol.generate_trees(2)
         assert len(trees) == 2

@@ -6,19 +6,19 @@ class TestLc0069Sqrtx:
         self.sol = Solution()
 
     def test_basic(self):
-        assert self.sol.mySqrt(4) == 2
+        assert self.sol.my_sqrt(4) == 2
 
     def test_non_perfect_square(self):
-        assert self.sol.mySqrt(8) == 2
+        assert self.sol.my_sqrt(8) == 2
 
     def test_zero(self):
-        assert self.sol.mySqrt(0) == 0
+        assert self.sol.my_sqrt(0) == 0
 
     def test_one(self):
-        assert self.sol.mySqrt(1) == 1
+        assert self.sol.my_sqrt(1) == 1
 
     def test_large(self):
-        assert self.sol.mySqrt(2147483647) == 46340
+        assert self.sol.my_sqrt(2147483647) == 46340
 
     def test_perfect_square_large(self):
-        assert self.sol.mySqrt(100) == 10
+        assert self.sol.my_sqrt(100) == 10

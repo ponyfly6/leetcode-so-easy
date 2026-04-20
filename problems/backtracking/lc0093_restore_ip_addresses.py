@@ -22,17 +22,14 @@ Difficulty: Medium | Priority: P0 | Topic: string, backtracking
 2. 忘记 start_index == len(s) 的终止条件
 3. 段数到 4 但字符没用完时要剪枝
 """
-from typing import List
-
-
 class Solution:
-    def restoreIpAddresses(self, s: str) -> List[str]:
+    def restore_ip_addresses(self, s: str) -> list[str]:
         results = []
-        path: List[str] = []
+        path: list[str] = []
         self._backtrack(s, 0, path, results)
         return results
 
-    def _backtrack(self, s: str, start_index: int, path: List[str], results: List[str]):
+    def _backtrack(self, s: str, start_index: int, path: list[str], results: list[str]):
         if len(path) == 4 and start_index == len(s):
             results.append(".".join(path))
             return

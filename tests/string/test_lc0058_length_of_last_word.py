@@ -6,16 +6,16 @@ class TestLc0058LengthOfLastWord:
         self.sol = Solution()
 
     def test_basic(self):
-        assert self.sol.lengthOfLastWord("Hello World") == 5
+        assert self.sol.length_of_last_word("Hello World") == 5
 
     def test_trailing_spaces(self):
-        assert self.sol.lengthOfLastWord("   fly me   to   the moon  ") == 4
+        assert self.sol.length_of_last_word("   fly me   to   the moon  ") == 4
 
     def test_single_word(self):
-        assert self.sol.lengthOfLastWord("luffy") == 5
+        assert self.sol.length_of_last_word("luffy") == 5
 
     def test_single_char(self):
-        assert self.sol.lengthOfLastWord("a") == 1
+        assert self.sol.length_of_last_word("a") == 1
 
     def test_spaces_between(self):
-        assert self.sol.lengthOfLastWord("a b") == 1
+        assert self.sol.length_of_last_word("a b") == 1

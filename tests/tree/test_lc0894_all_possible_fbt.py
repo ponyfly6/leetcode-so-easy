@@ -6,21 +6,21 @@ class TestLc0894AllPossibleFbt:
         self.sol = Solution()
 
     def test_n7(self):
-        result = self.sol.allPossibleFBT(7)
+        result = self.sol.all_possible_fbt(7)
         assert len(result) == 5
 
     def test_n3(self):
-        result = self.sol.allPossibleFBT(3)
+        result = self.sol.all_possible_fbt(3)
         assert len(result) == 1
 
     def test_n1(self):
-        result = self.sol.allPossibleFBT(1)
+        result = self.sol.all_possible_fbt(1)
         assert len(result) == 1
 
     def test_even_returns_empty(self):
-        assert self.sol.allPossibleFBT(2) == []
-        assert self.sol.allPossibleFBT(4) == []
+        assert self.sol.all_possible_fbt(2) == []
+        assert self.sol.all_possible_fbt(4) == []
 
     def test_n5(self):
-        result = self.sol.allPossibleFBT(5)
+        result = self.sol.all_possible_fbt(5)
         assert len(result) == 2

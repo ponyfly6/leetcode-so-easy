@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 LeetCode 894. All Possible Full Binary Trees
 https://leetcode.com/problems/all-possible-full-binary-trees/
@@ -22,11 +24,11 @@ Difficulty: Medium | Priority: P1 | Topic: tree, backtracking
 2. 左子树遍历步长必须为 2（保持奇数）
 3. 记忆化时要存结果引用，注意树节点共享
 """
-from typing import List, Optional
+
 
 
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None) -> None:
         self.val = val
         self.left = left
         self.right = right
@@ -34,11 +36,11 @@ class TreeNode:
 
 class Solution:
     def __init__(self) -> None:
-        self.memo: dict[int, List[Optional[TreeNode]]] = {
+        self.memo: dict[int, list[TreeNode | None]] = {
             1: [TreeNode(0)]
         }
 
-    def allPossibleFBT(self, n: int) -> List[Optional[TreeNode]]:
+    def all_possible_fbt(self, n: int) -> list[TreeNode | None]:
         if n in self.memo:
             return self.memo[n]
 
@@ -47,10 +49,10 @@ class Solution:
 
         all_trees = []
 
-        for l in range(1, n, 2):
-            r = n - l - 1
-            left_trees = self.allPossibleFBT(l)
-            right_trees = self.allPossibleFBT(r)
+        for left_size in range(1, n, 2):
+            right_size = n - left_size - 1
+            left_trees = self.all_possible_fbt(left_size)
+            right_trees = self.all_possible_fbt(right_size)
 
             for left_tree in left_trees:
                 for right_tree in right_trees:

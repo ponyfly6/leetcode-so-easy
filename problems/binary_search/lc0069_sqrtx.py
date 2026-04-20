@@ -25,7 +25,7 @@ Difficulty: Easy | Priority: P0 | Topic: binary_search, math
 
 
 class Solution:
-    def mySqrt(self, x: int) -> int:
+    def my_sqrt(self, x: int) -> int:
         if x == 0:
             return 0
 

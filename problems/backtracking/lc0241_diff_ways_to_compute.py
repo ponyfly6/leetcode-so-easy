@@ -22,27 +22,24 @@ Difficulty: Medium | Priority: P1 | Topic: backtracking, math
 2. 运算符后面的 expression[i+1:] 别越界
 3. 忘记处理减法导致负数的情况
 """
-from typing import List
-
-
 class Solution:
-    def diffWaysToCompute(self, expression: str) -> List[int]:
+    def diff_ways_to_compute(self, expression: str) -> list[int]:
         if expression.isdigit():
             return [int(expression)]
 
         results = []
         for i, char in enumerate(expression):
             if char in "+-*":
-                left_results = self.diffWaysToCompute(expression[:i])
-                right_results = self.diffWaysToCompute(expression[i + 1:])
+                left_results = self.diff_ways_to_compute(expression[:i])
+                right_results = self.diff_ways_to_compute(expression[i + 1:])
 
-                for l in left_results:
-                    for r in right_results:
+                for left in left_results:
+                    for right in right_results:
                         if char == "+":
-                            results.append(l + r)
+                            results.append(left + right)
                         elif char == "-":
-                            results.append(l - r)
+                            results.append(left - right)
                         else:
-                            results.append(l * r)
+                            results.append(left * right)
 
         return results

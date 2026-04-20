@@ -22,15 +22,12 @@ Difficulty: Hard | Priority: P1 | Topic: backtracking, dp
 2. 记忆化 key 用子串 vs 索引，两种都可以
 3. 拼接时 prefix + " " + suffix 在 suffix 为空时会多一个空格
 """
-from typing import List
-
-
 class Solution:
-    def wordBreak(self, s: str, wordDict: List[str]) -> List[str]:
-        word_set = set(wordDict)
-        memo: dict[str, List[str]] = {}
+    def word_break(self, s: str, word_dict: list[str]) -> list[str]:
+        word_set = set(word_dict)
+        memo: dict[str, list[str]] = {}
 
-        def solve(s: str) -> List[str]:
+        def solve(s: str) -> list[str]:
             if s in memo:
                 return memo[s]
 
