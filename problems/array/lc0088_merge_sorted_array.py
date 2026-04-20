@@ -22,11 +22,8 @@ Difficulty: Easy | Priority: P0 | Topic: array, two_pointers
 2. p1 耗尽时不需要额外处理（nums1 前面的元素已经在正确位置）——但其实 p2 剩余才需要拷贝
 3. 循环条件用 > 而非 >= 导致漏处理索引 0
 """
-from typing import List
-
-
 class Solution:
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+    def merge(self, nums1: list[int], m: int, nums2: list[int], n: int) -> None:
         p1 = m - 1
         p2 = n - 1
         p = m + n - 1

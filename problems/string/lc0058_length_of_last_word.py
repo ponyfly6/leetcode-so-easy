@@ -23,7 +23,7 @@ Difficulty: Easy | Priority: P0 | Topic: string
 
 
 class Solution:
-    def lengthOfLastWord(self, s: str) -> int:
+    def length_of_last_word(self, s: str) -> int:
         n = len(s)
         length = 0
         i = n - 1

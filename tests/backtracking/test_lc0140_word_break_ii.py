@@ -6,11 +6,11 @@ class TestLc0140WordBreakII:
         self.sol = Solution()
 
     def test_basic(self):
-        result = self.sol.wordBreak("catsanddog", ["cat", "cats", "and", "sand", "dog"])
+        result = self.sol.word_break("catsanddog", ["cat", "cats", "and", "sand", "dog"])
         assert sorted(result) == sorted(["cats and dog", "cat sand dog"])
 
     def test_pineapple(self):
-        result = self.sol.wordBreak(
+        result = self.sol.word_break(
             "pineapplepenapple",
             ["apple", "pen", "applepen", "pine", "pineapple"],
         )
@@ -22,9 +22,9 @@ class TestLc0140WordBreakII:
         assert sorted(result) == sorted(expected)
 
     def test_no_solution(self):
-        result = self.sol.wordBreak("catsandog", ["cats", "dog", "sand", "and", "cat"])
+        result = self.sol.word_break("catsandog", ["cats", "dog", "sand", "and", "cat"])
         assert result == []
 
     def test_single_word(self):
-        result = self.sol.wordBreak("apple", ["apple"])
+        result = self.sol.word_break("apple", ["apple"])
         assert result == ["apple"]

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 """
 LeetCode 95. Unique Binary Search Trees II
 https://leetcode.com/problems/unique-binary-search-trees-ii/
@@ -23,23 +25,23 @@ Difficulty: Medium | Priority: P1 | Topic: tree, backtracking
 2. 每次循环必须创建新的 TreeNode（不能复用引用）
 3. range(start, end+1) 别漏 +1
 """
-from typing import List, Optional
+
 
 
 class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
+    def __init__(self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None) -> None:
         self.val = val
         self.left = left
         self.right = right
 
 
 class Solution:
-    def generateTrees(self, n: int) -> List[Optional[TreeNode]]:
+    def generate_trees(self, n: int) -> list[TreeNode | None]:
         if n == 0:
             return []
         return self._generate(1, n)
 
-    def _generate(self, start: int, end: int) -> List[Optional[TreeNode]]:
+    def _generate(self, start: int, end: int) -> list[TreeNode | None]:
         if start > end:
             return [None]
 
